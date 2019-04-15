@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Blog</title>
+    <h1> {{ page }}</h1>
+</head>
+<body>
+
+<form method="post" action="/post/create/insert/" method="post" id="post_form" enctype="multipart/form-data">
+    {% csrf_token %}
+    Blog Title: <input type="text" name="blog_title"><br>
+    Content:<p> <textarea name="more_info", cols="70" rows="20" required="required"></textarea><br/>
+    </p><br>
+    Category: <input type="text" name="blog_category"><br>
+    Post Date: <input type="date" name="post_date">
+    Image: <input type="file" name="pic" required> <br>
+    <input type="submit"  id= 'submit' value="Submit Answer" > <input type="reset">
+
+</form>
+</body>
+</html>
+
+
+
+<!--
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#submit').on('click', function(e) {
+            e.preventDefault();
+            $.ajax({
+                type:'POST',
+                url:'/views/insert/',
+                data: $('#post_form').serialize(),
+                success: function () {
+                    alert('created');
+
+                }
+            })
+
+        })
+
+    })
+</script>
+-->

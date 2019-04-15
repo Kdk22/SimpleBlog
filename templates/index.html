@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple BLog App</title>
+
+    <ul>
+        <li>
+            {{ all_values.id }}
+        </li>
+    </ul>
+
+    {% if all_values %}
+        <ul>
+            {% for posts in all_values %}
+                <li><a href="/post/{{ post.id }}/">{{ post.title }} {{ post.content }}</a></li>
+                <li><a href="/post/{{ post.id }}/">{{ post.content }}</a></li>
+                <li><a href="/post/{{ post.id }}/">{{ post.categories }}</a></li>
+                <li><a href="/post/{{ post.id }}/">{{ post.post_date }}</a></li>
+
+            {%  endfor %}
+        </ul>
+    {%  else %}
+        <p>No post are available</p>
+    {% endif %}
+
+
+</head>
+<body>
+
+</body>
+</html>
